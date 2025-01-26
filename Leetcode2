@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int maximumInvitations(vector<int>& fav) {
+        int n = fav.size(), maxCycle = 0, pairChains = 0;
+        queue<int> q; // Handles employees not in cycles
+        vector<bool> vis(n); // Tracks processed employees
+        vector<int> inDeg(n), chainLen(n); // inDeg: favorite counts; chainLen: longest chain to each
+        
+        // Step 1: Calculate how many people favor each employee
+…};

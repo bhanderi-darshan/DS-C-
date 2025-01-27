@@ -1,0 +1,14 @@
+class Solution {
+public:
+    vector<bool> checkIfPrerequisite(int n, vector<vector<int>>& prerequisites, vector<vector<int>>& queries) {
+        vector<bitset<100>> prereq(n);  // Tracks all prerequisites for each course
+        vector<vector<int>> adj(n);     // Directed edges: adj[a] = courses that require 'a'
+        vector<int> inDegree(n, 0);     // Number of prerequisites for each course
+…        for (auto& qry : queries) {
+            int u = qry[0], v = qry[1];
+            ans.push_back(prereq[v][u]); // Check if 'u' is in 'v's prerequisites
+        }
+
+        return ans;
+    }
+};
